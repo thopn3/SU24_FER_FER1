@@ -1,0 +1,20 @@
+.menu-container{
+    list-style: none;
+}
+
+.menu-container > li{
+    display: inline-block;
+    padding: 0px 20px;
+}
+
+.menu-container > li > ul{
+    list-style: none;
+}
+
+.menu-container > li > ul{
+    display: none;
+}
+
+.menu-container > li:hover > ul{
+    display: block;
+}

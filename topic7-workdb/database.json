@@ -1,0 +1,84 @@
+{
+    "users": [
+        {
+            "id": 1,
+            "email": "member1@gmail.com",
+            "password": "123@#",
+            "type": "google",
+            "role": 1
+        },
+        {
+            "id": 2,
+            "email": "member2@gmail.com",
+            "password": "abc@#",
+            "type": "facebook",
+            "role": 1
+        },
+        {
+            "id": 3,
+            "email": "admin@fpt.edu.vn",
+            "password": "def@#",
+            "type": "system",
+            "role": 3
+        }
+    ],
+    "categories": [
+        {
+            "id": 1,
+            "name": "Electronic"
+        },
+        {
+            "id": 2,
+            "name": "Smartphone"
+        },
+        {
+            "id": 3,
+            "name": "Computer"
+        }
+    ],
+    "products": [
+        {
+            "id": 1,
+            "name": "Android TV 65 inch",
+            "price": 10000000,
+            "description": "",
+            "category": 1,
+            "brands": [
+                {"id": 1, "name": "Samsung"},
+                {"id": 2, "name": "Xiaomi"}
+            ]
+        },
+        {
+            "id": 2,
+            "name": "PC Core i9",
+            "price": 15000000,
+            "description": "",
+            "category": 3,
+            "brands": [
+                {"id": 1, "name": "Dell"},
+                {"id": 2, "name": "Lenovo"},
+                {"id": 3, "name": "Samsung"}
+            ]
+        },
+        {
+            "id": 3,
+            "name": "Laptop Core i7",
+            "price": 12000000,
+            "description": "",
+            "category": 3,
+            "brands": [
+                {"id": 1, "name": "Apple"}
+            ]
+        },
+        {
+            "id": 4,
+            "name": "Thanh Giong PC",
+            "price": 8000000,
+            "description": "",
+            "category": 3,
+            "brands": [
+                {"id": 1, "name": "FPT"}
+            ]
+        }
+    ]
+}
