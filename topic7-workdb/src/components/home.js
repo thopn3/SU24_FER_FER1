@@ -43,7 +43,18 @@ export default function Home() {
 
     }, [catId, search]);
 
-    console.log(arrBrand);
+    function handleDelete(pid){
+        if(window.confirm("Do you want to delete?")){
+            fetch(`http://localhost:9999/products/${pid}`, {method: "DELETE"})
+                .then(res => res.json())
+                .then((result) => {
+                    alert("Delete success. Product: " + result.name);
+                    window.location.reload();
+                })
+                .catch(error => console.log(error));
+        }
+    }
+
     return (
         <Container>
             <Row>
@@ -102,6 +113,11 @@ export default function Home() {
                             </Col>
                         </Row>
                         <Row>
+                            <Col style={{textAlign:"right"}} className='mb-3'>
+                                <Link to={"/product/add"}>Add a new Product</Link>
+                            </Col>
+                        </Row>
+                        <Row>
                             <Col>
                                 <Table hover bordered striped>
                                     <thead>
@@ -112,6 +128,7 @@ export default function Home() {
                                             <th>Description</th>
                                             <th>Brands</th>
                                             <th>Category</th>
+                                            <th colSpan={2}>Function</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -137,6 +154,12 @@ export default function Home() {
                                                         {
                                                             categories?.find(c => c.id === p.category)?.name
                                                         }
+                                                    </td>
+                                                    <td>
+                                                        <Link to={`/product/edit/${p.id}`}>Edit</Link>
+                                                    </td>
+                                                    <td>
+                                                        <Link to={"/product"} onClick={()=>handleDelete(p.id)}>Delete</Link>
                                                     </td>
                                                 </tr>
                                             ))
